@@ -1,5 +1,6 @@
-package com.tcl.tclchat;
+package com.tcl.tclchat.ui;
 
+import com.tcl.tclchat.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -30,11 +31,6 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-	/**
-	 * 
-	 * @param item
-	 * @return
-	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will
