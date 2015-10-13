@@ -9,6 +9,12 @@ import android.view.MenuItem;
  * @author song.chen
  *
  */
+
+/**
+ * 
+ * @author yichao.gu
+ *
+ */
 public class MainActivity extends Activity {
 
 	@Override
