@@ -22,7 +22,26 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int about_bottom_bg=0x7f020000;
+        public static final int about_mid_bg=0x7f020001;
+        public static final int about_top_bg=0x7f020002;
+        public static final int base_dialog_bg=0x7f020003;
+        public static final int base_horizontal_line=0x7f020004;
+        public static final int base_horizontal_line_red=0x7f020005;
+        public static final int btn_login_n=0x7f020006;
+        public static final int btn_login_p=0x7f020007;
+        public static final int btn_logout_n=0x7f020008;
+        public static final int btn_logout_p=0x7f020009;
+        public static final int btn_logout_selector=0x7f02000a;
+        public static final int button_normal_shape=0x7f02000b;
+        public static final int dialog_btn_selector=0x7f02000c;
+        public static final int dialog_shape_normal=0x7f02000d;
+        public static final int dialog_shape_pressed=0x7f02000e;
+        public static final int head=0x7f02000f;
+        public static final int ic_launcher=0x7f020010;
+        public static final int off=0x7f020011;
+        public static final int on=0x7f020012;
+        public static final int register_bottom_arrow=0x7f020013;
     }
     public static final class id {
         public static final int action_settings=0x7f080000;
