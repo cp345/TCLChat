@@ -17,4 +17,27 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+     <style name="Tcl">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    
+     <style name="Tcl.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/base_action_bar_height</item>
+    </style>
+    
+    <style name="Tcl.Button.logout">
+        <item name="android:background">@drawable/btn_logout_selector</item>
+    </style>
+
+    <style name="Tcl.TextView">
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
+    <style name="Tcl.TextView._Orange">
+        <item name="android:textColor">@color/dialog_color_title</item>
+    </style>
+    <style name="Tcl.TextView._Black">
+        <item name="android:textColor">@color/base_color_text_black</item>
+    </style>
 </resources>
