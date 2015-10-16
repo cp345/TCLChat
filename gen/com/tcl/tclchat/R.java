@@ -50,10 +50,24 @@ public final class R {
         public static final int register_bottom_arrow=0x7f020013;
     }
     public static final class id {
-        public static final int action_settings=0x7f090000;
+        public static final int action_settings=0x7f09000d;
+        public static final int dialog_bottom=0x7f090008;
+        public static final int dialog_contentPanel=0x7f090004;
+        public static final int dialog_custom=0x7f090007;
+        public static final int dialog_customPanel=0x7f090006;
+        public static final int dialog_leftspacer=0x7f090009;
+        public static final int dialog_message=0x7f090005;
+        public static final int dialog_negativebutton=0x7f09000a;
+        public static final int dialog_positivebutton=0x7f09000b;
+        public static final int dialog_rightspacer=0x7f09000c;
+        public static final int dialog_title=0x7f090002;
+        public static final int dialog_titleicon=0x7f090001;
+        public static final int dialog_top=0x7f090000;
+        public static final int title_red_line=0x7f090003;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int v2_dialog_base=0x7f030001;
     }
     public static final class menu {
         public static final int main=0x7f080000;
