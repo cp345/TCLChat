@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+        
+        <ImageView 
+            android:id="@+id/avatar"
+            style="@style/Tcl.ImageView.Photo_Middle"
+            android:src="@drawable/default_head"
+            android:layout_centerVertical="true"
+            />
+        
+        <TextView 
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/avatar"
+            android:layout_toEndOf="@id/avatar"
+            android:layout_marginLeft="18dp"
+            android:textColor="#0F0F0F"
+            android:textSize="@dimen/activity_horizontal_margin"/>
+        
+        <Button 
+            android:id="@+id/btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="11dp"
+            android:background="@drawable/btn_login_selector"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:textColor="@color/base_color_text_white"
+            android:textSize="14sp"
+            android:text="@string/agree"/>
+    </RelativeLayout>
+
+</LinearLayout>

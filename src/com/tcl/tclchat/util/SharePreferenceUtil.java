@@ -7,7 +7,7 @@
 /* Limited                                                                */
 /*                                                                        */
 /*----------------------------------------------------------------------- */
-/* Auther : Song Chen                                                     */
+/* Auther : Song.Chen                                                     */
 /* E-mail : song.chen@tcl.com                                             */
 /* Role   :                                                               */
 /* Reference documents:                                                   */
@@ -25,6 +25,7 @@
 /* ---------------------------------------------------------------------- */
 package com.tcl.tclchat.util;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 
@@ -38,7 +39,8 @@ public class SharePreferenceUtil {
 	private String SHARE_KEY_VOICE = "shared_key_sound";
 	private String SHARE_KEY_VIBRATE = "shared_key_vibrate";
 	
-	public SharePreferenceUtil(Context context, 	String name) {
+	@SuppressLint("CommitPrefEdits")
+	public SharePreferenceUtil(Context context, String name) {
 		mPreferences = context.getSharedPreferences(name, Context.MODE_PRIVATE);
 		mEditor = mPreferences.edit();
 	}

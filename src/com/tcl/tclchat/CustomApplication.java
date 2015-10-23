@@ -13,6 +13,7 @@ import android.preference.PreferenceManager;
 import cn.bmob.im.BmobChat;
 import cn.bmob.im.BmobUserManager;
 import cn.bmob.im.bean.BmobChatUser;
+import cn.bmob.im.db.BmobDB;
 import cn.bmob.v3.datatype.BmobGeoPoint;
 
 import com.baidu.location.BDLocation;
@@ -26,6 +27,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.utils.StorageUtils;
+import com.tcl.tclchat.util.CollectionUtils;
 import com.tcl.tclchat.util.SharePreferenceUtil;
 
 
@@ -38,16 +40,12 @@ public class CustomApplication extends Application {
 	
 	public static CustomApplication mApplication;
 	public LocationClient mlocationClient;
-	
 	/**上一次定位到的经纬度*/
 	public static BmobGeoPoint lastPoint = null;
-	
 	MediaPlayer mediaPlayer;
-	
 	public final String PREF_LONGTITUDE = "longtitude"; 
 	/**经度*/
 	private String longtitude;
-	
 	public final String PREF_LATITUDE = "latitude"; 
 	/**纬度*/
 	private String latitude;
@@ -56,7 +54,6 @@ public class CustomApplication extends Application {
 			HashMap<String, BmobChatUser>();
 	/**状态栏管理器*/
 	NotificationManager mNotificationManager;
-	
 	
 	@Override
 	public void onCreate() {
@@ -77,8 +74,8 @@ public class CustomApplication extends Application {
 				.getCurrentUser() != null) {
 			// TODO Auto-generated method stub
 			//获取本地好友列表到内存中，方便以后获取好友列表
-			//contactList = CollectionUtils.list2map(BmobDB.create(
-			//		getApplicationContext()).getContactList());
+			contactList = CollectionUtils.listTomap(BmobDB.create(
+					getApplicationContext()).getContactList());
 		}
 		initBaidu();
 	}
@@ -130,32 +127,34 @@ public class CustomApplication extends Application {
 				// 将保存的时候的URI名称用MD5 加密
 				.tasksProcessingOrder(QueueProcessingType.LIFO)
 				.discCache(new UnlimitedDiscCache(cacheDir))// 自定义缓存路径
-				// .defaultDisplayImageOptions(DisplayImageOptions.createSimple())
 				.writeDebugLogs() 
 				.build();
-		// Initialize ImageLoader with configuration.
 		ImageLoader.getInstance().init(config);// 全局初始化此配置
 		
 	}
 
 	public static CustomApplication getInstance() {
 		return mApplication;
+		
 	}
 	
 	// 单例模式，才能及时返回数据
 	SharePreferenceUtil mSpUtil;
 	public static final String PREFERENCE_NAME = "_sharedinfo";
-// TODO Auto-generated method stub
+
 	public synchronized SharePreferenceUtil getSpUtil() {
 		if (mSpUtil == null) {
+			
 			String currentId = BmobUserManager.getInstance(
 					getApplicationContext()).getCurrentUserObjectId();
 			String sharedName = currentId + PREFERENCE_NAME;
+			
 			mSpUtil = new SharePreferenceUtil(this, sharedName);
 		}
 		return mSpUtil;
 	}
 
+	
 	/**状态栏管理器*/
 	public NotificationManager getNotificationManager() {
 		if(mNotificationManager == null) {
@@ -225,7 +224,7 @@ public class CustomApplication extends Application {
 		this.contactList = contactList;
 	}
 
-	/**退出登录清空缓冲*/
+	/**退出登录时清空缓冲*/
 	public void logout() {
 		BmobUserManager.getInstance(getApplicationContext()).logout();
 		setContactList(null);
