@@ -37,6 +37,7 @@ import cn.bmob.im.BmobChatManager;
 import cn.bmob.im.BmobUserManager;
 import cn.bmob.im.util.BmobLog;
 
+import com.tcl.tclchat.CustomApplication;
 import com.tcl.tclchat.R;
 import com.tcl.tclchat.view.HeaderLayout;
 import com.tcl.tclchat.view.HeaderLayout.HeaderStyle;
@@ -52,7 +53,7 @@ public abstract class FragmentBase extends Fragment {
 	public BmobChatManager chatManager;
 	
 	/**自定义的应用类*/
-	//public CustomApplication mApplication;
+	public CustomApplication mApplication;
 	
 	public HeaderLayout mHeaderLayout;
 
@@ -81,7 +82,7 @@ public abstract class FragmentBase extends Fragment {
 	public void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setRetainInstance(true);
-		//mApplication = CustomApplication.getInstance();
+		mApplication = CustomApplication.getInstance();
 		userManager = BmobUserManager.getInstance(getActivity());
 		chatManager = BmobChatManager.getInstance(getActivity());
 		mInflater = LayoutInflater.from(getActivity());

@@ -36,9 +36,11 @@ package com.tcl.tclchat.ui;
 
 import com.tcl.tclchat.view.dialog.DialogTips;
 import com.tcl.tclchat.config.BmobConstants;
+import com.tcl.tclchat.config.Config;
 import com.tcl.tclchat.util.CommonUtils;
 import com.tcl.tclchat.R;
 
+import cn.bmob.im.BmobChat;
 import cn.bmob.im.bean.BmobChatUser;
 import cn.bmob.im.util.BmobLog;
 import cn.bmob.v3.listener.SaveListener;
@@ -72,6 +74,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener{
 		// TODO Auto-generated method stub
 		super.onCreate(arg0);
 		setContentView(R.layout.activity_login);
+		BmobChat.getInstance(this).init(Config.applicationId);
 		init();
 		//注册推出广播
 		IntentFilter filter = new IntentFilter();

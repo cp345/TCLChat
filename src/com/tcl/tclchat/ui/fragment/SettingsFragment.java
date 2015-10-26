@@ -85,7 +85,7 @@ public class SettingsFragment extends FragmentBase implements OnClickListener {
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		//mSharedUtil = mApplication.getSpUtil();
+		mSharedUtil = mApplication.getSpUtil();
 	}
 	
 	@Override
@@ -141,34 +141,34 @@ public class SettingsFragment extends FragmentBase implements OnClickListener {
 		
 		//初始化新消息的通知
 		
-		//boolean isAllowNotify = mSharedUtil.isAllowPushNotify();
-		//Log.i("SettingsFragment", mSharedUtil + "mSharedUtil*****");
-		//Log.i("SettingsFragment", isAllowNotify + "isAllowNotify*****");
-		//if(isAllowNotify) {
-//			iv_open_notification.setVisibility(View.VISIBLE);
-//			iv_close_notification.setVisibility(View.INVISIBLE);
-//		} else {
-//			iv_open_notification.setVisibility(View.INVISIBLE);
-//			iv_close_notification.setVisibility(View.VISIBLE);
-//		}
-//		//初始化声音
-//		boolean isAllowVoice = mSharedUtil.isAllowVoice();
-//		if(isAllowVoice) {
-//			iv_open_voice.setVisibility(View.VISIBLE);
-//			iv_close_voice.setVisibility(View.INVISIBLE);
-//		} else {
-//			iv_open_voice.setVisibility(View.INVISIBLE);
-//			iv_close_voice.setVisibility(View.VISIBLE);
-//		}
-//		//初始化震动
-//		boolean isAllowVibrate = mSharedUtil.isAllowVibrate();
-//		if(isAllowVibrate) {
-//			iv_open_vibrate.setVisibility(View.VISIBLE);
-//			iv_close_vibrate.setVisibility(View.INVISIBLE);
-//		} else {
-//			iv_open_vibrate.setVisibility(View.INVISIBLE);
-//			iv_close_vibrate.setVisibility(View.VISIBLE);
-//		}
+		boolean isAllowNotify = mSharedUtil.isAllowPushNotify();
+		Log.i("SettingsFragment", mSharedUtil + "mSharedUtil*****");
+		Log.i("SettingsFragment", isAllowNotify + "isAllowNotify*****");
+		if(isAllowNotify) {
+			iv_open_notification.setVisibility(View.VISIBLE);
+			iv_close_notification.setVisibility(View.INVISIBLE);
+		} else {
+			iv_open_notification.setVisibility(View.INVISIBLE);
+			iv_close_notification.setVisibility(View.VISIBLE);
+		}
+		//初始化声音
+		boolean isAllowVoice = mSharedUtil.isAllowVoice();
+		if(isAllowVoice) {
+			iv_open_voice.setVisibility(View.VISIBLE);
+			iv_close_voice.setVisibility(View.INVISIBLE);
+		} else {
+			iv_open_voice.setVisibility(View.INVISIBLE);
+			iv_close_voice.setVisibility(View.VISIBLE);
+		}
+		//初始化震动
+		boolean isAllowVibrate = mSharedUtil.isAllowVibrate();
+		if(isAllowVibrate) {
+			iv_open_vibrate.setVisibility(View.VISIBLE);
+			iv_close_vibrate.setVisibility(View.INVISIBLE);
+		} else {
+			iv_open_vibrate.setVisibility(View.INVISIBLE);
+			iv_close_vibrate.setVisibility(View.VISIBLE);
+		}
 	}
 
 	private void initData() {
@@ -198,7 +198,7 @@ public class SettingsFragment extends FragmentBase implements OnClickListener {
 			if(iv_open_notification.getVisibility() == View.VISIBLE) {
 				iv_open_notification.setVisibility(View.INVISIBLE);
 				iv_close_notification.setVisibility(View.VISIBLE);
-				//mSharedUtil.setPushNotifyEnable(false);
+				mSharedUtil.setPushNotifyEnable(false);
 				rl_switch_vibrate.setVisibility(View.GONE);
 				rl_switch_voice.setVisibility(View.GONE);
 				view1.setVisibility(View.GONE);
@@ -206,7 +206,7 @@ public class SettingsFragment extends FragmentBase implements OnClickListener {
 			} else { //当允许接收新消息的通知时，声音震动都显示出来
 				iv_open_notification.setVisibility(View.VISIBLE);
 				iv_close_notification.setVisibility(View.INVISIBLE);
-				//mSharedUtil.setPushNotifyEnable(true);
+				mSharedUtil.setPushNotifyEnable(true);
 				rl_switch_voice.setVisibility(View.VISIBLE);
 				rl_switch_vibrate.setVisibility(View.VISIBLE);
 				view1.setVisibility(View.VISIBLE);
@@ -217,22 +217,22 @@ public class SettingsFragment extends FragmentBase implements OnClickListener {
 			if(iv_open_voice.getVisibility() == View.VISIBLE) {
 				iv_close_voice.setVisibility(View.VISIBLE);
 				iv_open_voice.setVisibility(View.INVISIBLE);
-				//mSharedUtil.setAllowVoiceEnable(false);
+				mSharedUtil.setAllowVoiceEnable(false);
 			} else {
 				iv_close_voice.setVisibility(View.INVISIBLE);
 				iv_open_voice.setVisibility(View.VISIBLE);
-				//mSharedUtil.setAllowVoiceEnable(true);
+				mSharedUtil.setAllowVoiceEnable(true);
 			}
 			break;
 		case R.id.rl_switch_vibrate:
 			if(iv_open_vibrate.getVisibility() == View.VISIBLE) {
 				iv_close_vibrate.setVisibility(View.VISIBLE);
 				iv_open_vibrate.setVisibility(View.INVISIBLE);
-				//mSharedUtil.setAllowVibrateEnable(false);
+				mSharedUtil.setAllowVibrateEnable(false);
 			} else {
 				iv_close_vibrate.setVisibility(View.INVISIBLE);
 				iv_open_vibrate.setVisibility(View.VISIBLE);
-				//mSharedUtil.setAllowVibrateEnable(true);
+				mSharedUtil.setAllowVibrateEnable(true);
 			}
 			break;
 		default:
